@@ -74,3 +74,5 @@ source env/bin/activate
 
 
 
+## Django Challenge 2
+![Alt text](img/challenge2.png)
