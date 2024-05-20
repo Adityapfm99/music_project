@@ -40,17 +40,17 @@ source env/bin/activate
 
     GET DETAIL
 
-    curl --location --request GET 'http://localhost:8000/api/tracks/detail/:tracksId' \
+    curl --location --request GET 'http://localhost:8000/api/tracks/detail/<:tracksId>' \
     --form 'file=@"/path/to/file"' \
     --form 'artist="Michael Jackson12"' \
     --form 'title="Moonwalk"'
 
     DELETE
 
-    curl --location --request DELETE 'http://localhost:8000/api/tracks/delete/:tracksId'
+    curl --location --request DELETE 'http://localhost:8000/api/tracks/delete/<:tracksId>'
 
     PUT
-    curl --location --request PUT 'http://localhost:8000/api/tracks/update/:tracksId' \
+    curl --location --request PUT 'http://localhost:8000/api/tracks/update/<:tracksId>' \
     --header 'Content-Type: application/json' \
     --data '{
         "artist": “bon  jovi”,
@@ -58,7 +58,7 @@ source env/bin/activate
     }'
 
     POST
-    curl --location 'http://localhost:8000/api/tracks/:tracksId/calculate-start-time' \
+    curl --location 'http://localhost:8000/api/tracks/<:tracksId>/calculate-start-time' \
     --form 'file=@"/path/to/file"' \
     --form 'artist="Michael Jackson12"' \
     --form 'title="Moonwalk"'
@@ -72,7 +72,33 @@ source env/bin/activate
 
 ![Alt text](img/swagger.png)
 
+## Django Challenge 1
+```bash
+ Create
+```
+![Alt text](img/create.png)
 
+```bash
+ validation
+```
+![Alt text](img/validationCreate.png)
+
+
+```bash
+ Get List & Detail
+```
+![Alt text](img/getList.png)
+![Alt text](img/getListDetail.png)
+
+```bash
+ Delete
+```
+![Alt text](img/deleted.png)
+
+```bash
+ update
+```
+![Alt text](img/update.png)
 
 ## Django Challenge 2
 ![Alt text](img/challenge2.png)

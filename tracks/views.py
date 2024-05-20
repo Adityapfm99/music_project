@@ -53,9 +53,9 @@ class TrackDeleteAPIView(generics.DestroyAPIView):
         data = self.get_object()
         if data:    
             data.delete()
-            return Response(status=status.HTTP_200_OK)
+            return Response({'OK': 'Data Succesfully Deleted'}, status=status.HTTP_200_OK)
         else:
-            return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'Data not found'}, status=status.HTTP_404_NOT_FOUND)
 
 
 class CalculateStartTimeAPIView(generics.GenericAPIView):
