@@ -1,9 +1,10 @@
 import mimetypes
+from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics
-
+import librosa
 from .models import Track
 from .serializers import TrackSerializer
 
@@ -56,4 +57,16 @@ class TrackDeleteAPIView(generics.DestroyAPIView):
         else:
             return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
 
-       
+
+class CalculateStartTimeAPIView(generics.GenericAPIView):
+    queryset = Track.objects.all()
+    permission_classes = ()
+
+    def post(self, request, *args, **kwargs):
+        track = get_object_or_404(Track, pk=kwargs['pk'])
+        file_path = track.file.path
+        
+        y, sr = librosa.load(file_path, sr=None)
+        start_time = librosa.effects.split(y, top_db=20)[0][0] / sr
+        
+        return Response({"start_time": start_time}, status=status.HTTP_200_OK)

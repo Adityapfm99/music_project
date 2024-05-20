@@ -2,7 +2,7 @@ from django.conf import settings
 from django.urls import path
 from django.conf.urls.static import static
 from rest_framework import permissions
-from .views import TrackUploadView,TrackListAPIView, TrackDetailAPIView, TrackDeleteAPIView, TrackUpdateAPIView
+from .views import TrackUploadView,TrackListAPIView, TrackDetailAPIView, TrackDeleteAPIView, TrackUpdateAPIView, CalculateStartTimeAPIView
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
@@ -22,6 +22,7 @@ urlpatterns = [
     path('api/tracks/detail/<int:pk>', TrackDetailAPIView.as_view(), name='track-detail'),
     path('api/tracks/update/<int:pk>', TrackUpdateAPIView.as_view(), name='track-update'),
     path('api/tracks/delete/<int:pk>', TrackDeleteAPIView.as_view(), name='track-delete'),
+    path('api/tracks/<int:pk>/calculate-start-time', CalculateStartTimeAPIView.as_view(), name='calculate-start-time'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('docs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]

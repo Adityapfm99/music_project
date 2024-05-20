@@ -1,15 +1,15 @@
 # music-project-test
 
 
-## Clone
+## Repo
 
 ```bash
 git clone : https://github.com/Adityapfm99/music_project
 ```
 
-## activate a virtual environment
+## Activate a virtual environment
 ```bash
-source venv/bin/activate
+source env/bin/activate
 ```
 
 ## Migrate 
@@ -40,22 +40,28 @@ source venv/bin/activate
 
     GET DETAIL
 
-    curl --location --request GET 'http://localhost:8000/api/tracks/detail/1' \
+    curl --location --request GET 'http://localhost:8000/api/tracks/detail/:tracksId' \
     --form 'file=@"/path/to/file"' \
     --form 'artist="Michael Jackson12"' \
     --form 'title="Moonwalk"'
 
     DELETE
 
-    curl --location --request DELETE 'http://localhost:8000/api/tracks/delete/4'
+    curl --location --request DELETE 'http://localhost:8000/api/tracks/delete/:tracksId'
 
     PUT
-    curl --location --request PUT 'http://localhost:8000/api/tracks/update/2' \
+    curl --location --request PUT 'http://localhost:8000/api/tracks/update/:tracksId' \
     --header 'Content-Type: application/json' \
     --data '{
         "artist": “bon  jovi”,
         "title": "test Title bon”
     }'
+
+    POST
+    curl --location 'http://localhost:8000/api/tracks/:tracksId/calculate-start-time' \
+    --form 'file=@"/path/to/file"' \
+    --form 'artist="Michael Jackson12"' \
+    --form 'title="Moonwalk"'
 ```
 
 
