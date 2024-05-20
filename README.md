@@ -73,6 +73,7 @@ source env/bin/activate
 ```
 
 ![Alt text](img/swagger.png)
+![Alt text](img/docs.png)
 
 ## Django Challenge 1
 ```bash
