@@ -63,3 +63,8 @@ source venv/bin/activate
 ```bash
  http://127.0.0.1:8000/docs/
 ```
+```bash
+ ![Alt text](swaagger.png)
+```
+
+
