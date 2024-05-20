@@ -67,7 +67,9 @@ source env/bin/activate
 
 ## API DOCS (Swagger)
 ```bash
- http://127.0.0.1:8000/docs/
+ http://127.0.0.1:8000/docs/ 
+ or  
+ http://127.0.0.1:8000/swagger/ 
 ```
 
 ![Alt text](img/swagger.png)
