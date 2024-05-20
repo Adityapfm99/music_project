@@ -57,3 +57,9 @@ source venv/bin/activate
         "title": "test Title bon”
     }'
 ```
+
+
+## API DOCS (Swagger)
+```bash
+ http://127.0.0.1:8000/docs/
+```
